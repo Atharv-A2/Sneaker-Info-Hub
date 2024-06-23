@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneaker Information Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> <!-- Include Tailwind CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://images6.alphacoders.com/133/1331511.png');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .login-section {
+            position: relative;
+            z-index: 1; /* Ensure login section appears above the overlay */
+        }
+
+        .login-section .container {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body class="bg-gray-400 text-white flex justify-center items-center h-screen bg-cover">
+
+    <div class="login-section">
+        <div class="container bg-gray-800 bg-opacity-50 rounded-lg p-8 shadow-md w-80">
+            <h1 class="text-2xl font-bold mb-4">Sneaker Information Hub</h1>
+           
+            <form method="POST" action="{{ url_for('login') }}">
+                <div class="mb-4">
+                    <label for="username" class="text-left block mb-1">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter Your Username" class="w-full px-3 py-2 bg-gray-700 rounded-lg focus:outline-none focus:bg-gray-600">
+                </div>
+               
+                <div class="mb-4">
+                    <label for="password" class="block mb-1 text-left">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter Your Password" class="w-full px-3 py-2 bg-gray-700 rounded-lg focus:outline-none focus:bg-gray-600">
+                </div>
+               
+                <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline" onclick="(window.location.href = '/all_packages')">Login</button>
+            </form>
+            <br>
+            <p class="bottom">Don't have an account? <a class="bottom hover:text-blue-500" href="{{url_for('register')}}"> <br>Sign Up here</a></p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<head>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+		    <style>
+        .bg{
+        background-image: url({{ url_for('static', filename = '/img/bg2.jpg')}});
+        background-repeat: no-repeat;
+        background-size:cover;
+        padding-bottom: 500px;
+      }
+    </style>
+</head>
+<div class="content bg ">
+	<h1 class="headings">Update Sneaker Cost</h1>
+	<br>
+	<br>
+	<div class="temp1">
+	<form method="POST" action="">
+		<label >Model ID</label>
+		<br>
+		<input type="text" placeholder="Enter an integer value " name="modelid" required="required" />
+		<br> 
+		<label >New Cost </label>
+		<br>
+		<input type="text" placeholder="Enter an integer value " name="price" required="required" />
+		<br>
+		<input type="submit">
+	</form>
+</div>
+</div>

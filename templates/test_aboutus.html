@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Sneaky</title>
+
+
+    <style>
+        :root {
+        --primaryColor: #f09d51;/*setting variables syntax*/
+        --mainWhite: rgb(216, 154, 206);
+        --mainBlack: #222;
+        --mainGrey: #ececec;
+        --mainSpacing: 0.1rem;
+        --mainTransition: all 0.3s linear;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /*element wont get bigger*/
+        }
+        .body {
+            color: var(--mainBlack);
+            font-family: "Lato", sans-serif;
+
+        }
+
+        .start{
+            /*margin-top: 3rem;   */
+            padding-top: 50px; 
+        
+        }
+        .card{
+        background:#222;
+        opacity: 0.3;
+        }
+        .card-body{
+        color: #ececec;
+        }
+        .col:first-child{
+            /*background: rgb(240, 194, 147);*/
+            /*background: #d4b4a8;*/
+            /*background: #e44c65; pink */
+            /*background: #312d2e;*/
+            /*background: #222;*/
+            opacity: 0.8;    
+        }
+        .clas{
+        padding-bottom: 200px;
+
+        }
+        .navbar:first-child{
+            /*background: rgb(153, 109, 131);*/
+            /*background: #045e93;*/
+            background: #222;
+            opacity: 0.8;
+        }
+        .bg{
+        background-image: url({{ url_for('static', filename = '/img/logo1.jpg')}});
+        background-repeat: no-repeat;
+        background-size:cover;
+        }
+
+        .bg2{
+        background-image: url({{ url_for('static', filename = '/img/bg7.avif')}});
+        background-repeat: no-repeat;
+        background-size:cover;
+        }
+
+        .bg1{
+        position: relative;
+        background-image: url({{ url_for('static', filename = '/img/bg5.jpg')}});
+        background-repeat: no-repeat;
+        background-size:cover;
+        border-radius: 10px;
+        
+        }
+
+        .bg1::before {
+        content: ""; /* Necessary for pseudo-elements */
+        position: absolute; /* Position the pseudo-element */
+        top: 0; /* Align to the top */
+        left: 0; /* Align to the left */
+        width: 100%; /* Cover the entire container horizontally */
+        height: 100%; /* Cover the entire container vertically */
+        background-color: rgba(0, 0, 0, 0.5); /* Transparent black color */
+        }
+
+        .card:hover{
+        color: rgba(255, 255, 255, 1);
+        /*box-shadow: 0 15px 15px rgba(0,0,0, .8);*/
+        box-shadow: 0 15px 15px rgba(255,255,255,0.8);
+        }
+        .glow{
+        text-shadow: 1px 1px 2px #faf7f7;
+        }
+    </style>
+
+    
+</head>
+<body>
+    <header class="text-gray-600 body-font bg" >
+        <div class="container mx-auto flex flex-wrap p-1 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+               
+                <img src="static\img\final_logo.svg" alt="card-image" class="object-cover w-20" />
+
+            <span class="ml-3 text-xl" style="color: #d1d5db;">Sneaker Information Hub</span>
+
+            </a>
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:text-gray-900" style="color: #f0fdf4; font-size: 20px;" href="http://127.0.0.1:5000/home">Home</a>
+            <a class="mr-5 hover:text-gray-900" style="color: #f0fdf4; font-size: 20px;" href="http://127.0.0.1:5000/test_aboutus">About Us</a>
+            <a class="mr-5 hover:text-gray-900" style="color: #f0fdf4;" href="http://127.0.0.1:5000/shopping_cart">
+                <?xml version="1.0" standalone="no"?>
+                <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+                "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                width="35.000000pt" height="35.000000pt" viewBox="0 0 192.000000 148.000000"
+                preserveAspectRatio="xMidYMid meet">
+                <metadata>
+                Created by potrace 1.16, written by Peter Selinger 2001-2019
+                </metadata>
+                <g transform="translate(0.000000,148.000000) scale(0.100000,-0.100000)"
+                fill="#f0fdf4" stroke="none">
+                <path d="M278 1402 c-22 -4 -34 -47 -19 -66 6 -7 56 -30 111 -51 54 -22 102
+                -46 106 -54 5 -14 131 -376 204 -587 23 -67 26 -84 15 -95 -20 -22 -77 -193
+                -73 -220 2 -18 10 -25 31 -27 32 -4 31 0 11 -47 -20 -48 -12 -94 22 -135 53
+                -63 166 -58 211 9 27 40 31 115 7 149 l-15 22 151 0 151 0 -15 -22 c-34 -48
+                -8 -163 42 -183 50 -20 78 -24 113 -15 74 20 114 104 84 176 -19 46 -20 42 11
+                46 31 3 50 28 41 52 -6 14 -43 16 -382 16 -206 0 -375 3 -375 7 0 3 8 30 17
+                60 l17 53 357 0 c273 0 359 3 367 13 5 6 54 151 108 320 75 238 96 312 87 325
+                -9 15 -53 17 -473 20 -333 1 -467 -1 -476 -9 -20 -17 -17 -57 5 -69 13 -6 167
+                -10 431 -10 l412 0 -6 -25 c-3 -13 -11 -36 -16 -50 l-10 -25 -345 0 c-220 0
+                -353 -4 -366 -10 -21 -12 -25 -50 -7 -68 9 -9 100 -12 350 -12 186 0 338 -3
+                338 -7 0 -3 -8 -30 -17 -60 l-17 -53 -292 0 c-253 0 -295 -2 -308 -16 -20 -20
+                -20 -38 0 -58 13 -14 54 -16 290 -16 198 0 274 -3 274 -11 0 -7 -5 -29 -12
+                -50 l-11 -39 -307 0 -308 0 -6 28 c-15 59 -239 688 -250 699 -24 25 -231 101
+                -258 95z"/>
+                </g>
+                </svg>
+    
+            </a>
+            </nav>
+            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" onclick="(window.location.href = '/login')">Login
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="h-1 bg-gray-200 rounded overflow-hidden">
+        <div class="w-24 h-full"></div>
+    </div>
+
+    <section class="text-neutral-300 body-font relative">
+        <!-- Background image -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1549298916-f52d724204b4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHNuZWFrZXJzfGVufDB8fDB8fHww'); z-index: -1;"></div>
+        <!-- Dimming overlay -->
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <!-- Content -->
+        <div class="container px-5 py-24 mx-auto relative z-10">
+            <div class="flex flex-col text-center w-full mb-20">
+                <h1 class="text-2xl font-medium title-font mb-4 text-gray-100 tracking-widest">OUR TEAM</h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">A motivated team is a team that gives its absolute best effort. It is a team that is characterized by many benefits, such as a high level of commitment, innovation, and energy in the workplace.</p>
+            </div>
+            <div class="flex flex-wrap -m-4 text-black"> <!-- Added text-black class -->
+                <div class="p-4 lg:w-1/2">
+                    <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+                      <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="static\img\Nancy.jpg">
+                      <div class="flex-grow sm:pl-8">
+                        <h2 class="title-font font-medium text-lg text-white">Nancy Oinam</h2>
+                        <h3 class="text-gray-300 mb-3">Designer</h3>
+                        <p class="mb-4 text-slate-200">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-4 lg:w-1/2">
+                    <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+                      <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="static\img\Mehul.jpg">
+                      <div class="flex-grow sm:pl-8">
+                        <h2 class="title-font font-medium text-lg text-white">Mehul Chandak</h2>
+                        <h3 class="text-gray-300 mb-3">Data Analyst</h3>
+                        <p class="mb-4 text-slate-200">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-4 lg:w-1/2">
+                    <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+                      <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="static\img\Abhishek.jpg">
+                      <div class="flex-grow sm:pl-8">
+                        <h2 class="title-font font-medium text-lg text-white">Abhishek Thakur</h2>
+                        <h3 class="text-gray-300 mb-3">Front End Developer</h3>
+                        <p class="mb-4 text-slate-200">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-4 lg:w-1/2">
+                    <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+                      <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="static\img\Atharv.jpg">
+                      <div class="flex-grow sm:pl-8">
+                        <h2 class="title-font font-medium text-lg text-white">Atharv Agrawal</h2>
+                        <h3 class="text-gray-300 mb-3">Backend Developer</h3>
+                        <p class="mb-4 text-slate-200">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
+                        
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+
+      <footer class="text-gray-600 body-font bg-gray-100">
+        <div class="container px-2 py-1 mx-auto flex items-center sm:flex-row flex-col">
+            <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                <img src="static/img/final_logo-removebg-preview.png" alt="Logo" class="object-cover w-20">
+                <span class="ml-3 text-xl">Sneaker Information Hub</span>
+            </a>
+            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2024 Sneaky
+            </p>
+            <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+                <a class="text-gray-500">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        class="w-5 h-5" viewBox="0 0 24 24">
+                        <path
+                            d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        class="w-5 h-5" viewBox="0 0 24 24">
+                        <path
+                            d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                        </path>
+                    </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                    </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path stroke="none"
+                            d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                        </path>
+                        <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                    </svg>
+                </a>
+            </span>
+        </div>
+    </footer>
+
+
+
+</body>

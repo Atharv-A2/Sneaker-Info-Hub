@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+	<style>
+	body {
+		font-family: Arial, sans-serif;
+		background-image: url('https://images6.alphacoders.com/133/1331511.png');
+		background-size: cover;
+		background-position: center;
+		color: #fff;
+		padding: 20px;
+		text-align: center;
+		position: relative;
+	}
+
+	body::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: -1;
+	}
+	.register-section {
+            position: relative;
+            z-index: 1; /* Ensure login section appears above the overlay */
+        }
+
+	.register-section .container {
+		background-color: rgba(0, 0, 0, 0.5);
+		border-radius: 10px;
+	}
+
+
+</style>
+</head>
+<body class="bg-gray-400 text-white flex justify-center items-center h-screen bg-cover">
+
+    <div class="flex justify-center items-center h-screen register-section">
+        <div class="border-gray-800 p-8 max-w-md w-full bg-white container bg-gray-900 bg-opacity-50 rounded-lg p-8 shadow-xl w-80">
+            <div class="text-center">
+                <h1 class="text-3xl font-bold mb-4">Register</h1>
+            </div>
+            <form action="{{ url_for('register') }}" method="post" class="mt-4">
+                <div class="text-red-500 mb-4">{{ msg }}</div>
+                <input id="username" name="username" type="text" placeholder="Enter Your Username" class="w-full px-3 py-2 bg-gray-700 rounded-lg focus:outline-none focus:bg-gray-600 mb-4" />
+                <input id="password" name="password" type="password" placeholder="Enter Your Password" class="w-full px-3 py-2 bg-gray-700 rounded-lg focus:outline-none focus:bg-gray-600 mb-4" />
+                <input id="email" name="email" type="text" placeholder="Enter Your Email ID" class="w-full px-3 py-2 bg-gray-700 rounded-lg focus:outline-none focus:bg-gray-600 mb-4" />
+                <input type="submit" class="w-full bg-green-500 text-white font-semibold px-4 py-2 rounded-md hover:bg-green-600 cursor-pointer" value="Sign Up">
+            </form>
+			
+            <p type="button" class="mt-4 text-center text-gray-300">Already have an account? <a href="{{url_for('login')}}" class="hover:text-blue-500">Sign In here</a></p>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

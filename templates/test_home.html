@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function addItemToCart() {
+            alert("Item Added to Cart");
+            window.location.href = "#Products";
+        }
+
+    </script>
+    <title>Sneaky</title>
+
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+        --primaryColor: #f09d51;/*setting variables syntax*/
+        --mainWhite: rgb(216, 154, 206);
+        --mainBlack: #222;
+        --mainGrey: #ececec;
+        --mainSpacing: 0.1rem;
+        --mainTransition: all 0.3s linear;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /*element wont get bigger*/
+        }
+        .body {
+            color: var(--mainBlack);
+            font-family: "Lato", sans-serif;
+
+        }
+
+        .start{
+            /*margin-top: 3rem;   */
+            padding-top: 50px; 
+        
+        }
+        .card{
+        background:#222;
+        opacity: 0.3;
+        }
+        .card-body{
+        color: #ececec;
+        }
+        .col:first-child{
+            /*background: rgb(240, 194, 147);*/
+            /*background: #d4b4a8;*/
+            /*background: #e44c65; pink */
+            /*background: #312d2e;*/
+            /*background: #222;*/
+            opacity: 0.8;    
+        }
+        .clas{
+        padding-bottom: 200px;
+
+        }
+        .navbar:first-child{
+            /*background: rgb(153, 109, 131);*/
+            /*background: #045e93;*/
+            background: #222;
+            opacity: 0.8;
+        }
+        .bg{
+        background-image: url({{ url_for('static', filename = '/img/logo1.jpg')}});
+        background-repeat: no-repeat;
+        background-size:cover;
+        }
+
+        .bg2{
+        background-image: url({{ url_for('static', filename = '/img/bg7.avif')}});
+        background-repeat: no-repeat;
+        background-size:cover;
+        }
+
+        .bg1{
+        position: relative;
+        background-image: url({{ url_for('static', filename = '/img/bg6.jpg')}});
+        background-repeat: no-repeat;
+        background-size:cover;
+        border-radius: 10px;
+        }
+
+        .bg1::before {
+        content: ""; /* Necessary for pseudo-elements */
+        position: absolute; /* Position the pseudo-element */
+        top: 0; /* Align to the top */
+        left: 0; /* Align to the left */
+        width: 100%; /* Cover the entire container horizontally */
+        height: 100%; /* Cover the entire container vertically */
+        background-color: rgba(0, 0, 0, 0.5); /* Transparent black color */
+        opacity:80%;
+        }
+
+        .card:hover{
+        color: rgba(255, 255, 255, 1);
+        /*box-shadow: 0 15px 15px rgba(0,0,0, .8);*/
+        box-shadow: 0 15px 15px rgba(255,255,255,0.8);
+        }
+        .glow{
+        text-shadow: 1px 1px 2px #faf7f7;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+
+
+        *{
+		margin:0px;
+		padding:0px;
+		box-sizing:border-box;
+		font-family: sans-serif;
+	    }
+
+        
+
+       
+
+        
+        .content{
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            opacity: 0;
+            transition: 0.4s;
+        }
+
+        .content:hover{
+            opacity: 1;
+        }
+
+        .content > *{
+            transform : translateY(25px);
+            transition: transform 0.6s;
+        }
+
+        .content > *{
+            transform : translateY(0px);
+        }
+
+    </style>
+
+    
+</head>
+<body>
+    <header class="text-gray-600 body-font bg" >
+        <div class="container mx-auto flex flex-wrap p-1 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+               
+                <img src="static\img\final_logo.svg" alt="card-image" class="object-cover w-20" />
+
+            <span class="ml-3 text-xl" style="color: #d1d5db;">Sneaker Information Hub</span>
+
+            </a>
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:text-gray-900" style="color: #f0fdf4; font-size: 20px;" href="http://127.0.0.1:5000/test_home">Home</a>
+            <a class="mr-5 hover:text-gray-900" style="color: #f0fdf4; font-size: 20px;" href="http://127.0.0.1:5000/test_aboutus">About Us</a>
+            <a class="mr-5 hover:text-gray-900" style="color: #f0fdf4;" href="http://127.0.0.1:5000/shopping_cart">
+                <?xml version="1.0" standalone="no"?>
+                <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+                "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                width="35.000000pt" height="35.000000pt" viewBox="0 0 192.000000 148.000000"
+                preserveAspectRatio="xMidYMid meet">
+                <metadata>
+                Created by potrace 1.16, written by Peter Selinger 2001-2019
+                </metadata>
+                <g transform="translate(0.000000,148.000000) scale(0.100000,-0.100000)"
+                fill="#f0fdf4" stroke="none">
+                <path d="M278 1402 c-22 -4 -34 -47 -19 -66 6 -7 56 -30 111 -51 54 -22 102
+                -46 106 -54 5 -14 131 -376 204 -587 23 -67 26 -84 15 -95 -20 -22 -77 -193
+                -73 -220 2 -18 10 -25 31 -27 32 -4 31 0 11 -47 -20 -48 -12 -94 22 -135 53
+                -63 166 -58 211 9 27 40 31 115 7 149 l-15 22 151 0 151 0 -15 -22 c-34 -48
+                -8 -163 42 -183 50 -20 78 -24 113 -15 74 20 114 104 84 176 -19 46 -20 42 11
+                46 31 3 50 28 41 52 -6 14 -43 16 -382 16 -206 0 -375 3 -375 7 0 3 8 30 17
+                60 l17 53 357 0 c273 0 359 3 367 13 5 6 54 151 108 320 75 238 96 312 87 325
+                -9 15 -53 17 -473 20 -333 1 -467 -1 -476 -9 -20 -17 -17 -57 5 -69 13 -6 167
+                -10 431 -10 l412 0 -6 -25 c-3 -13 -11 -36 -16 -50 l-10 -25 -345 0 c-220 0
+                -353 -4 -366 -10 -21 -12 -25 -50 -7 -68 9 -9 100 -12 350 -12 186 0 338 -3
+                338 -7 0 -3 -8 -30 -17 -60 l-17 -53 -292 0 c-253 0 -295 -2 -308 -16 -20 -20
+                -20 -38 0 -58 13 -14 54 -16 290 -16 198 0 274 -3 274 -11 0 -7 -5 -29 -12
+                -50 l-11 -39 -307 0 -308 0 -6 28 c-15 59 -239 688 -250 699 -24 25 -231 101
+                -258 95z"/>
+                </g>
+                </svg>
+    
+            </a>
+            </nav>
+            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" onclick="(window.location.href = '/login')" >Login
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="h-1 bg-gray-200 rounded overflow-hidden">
+        <div class="w-24 h-full"></div>
+    </div>
+
+
+    <div class="bg-cover bg-center min-vh-screen bg1 bg-fixed relative">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div> 
+        <section class="text-white body-font relative z-10">
+            <div class="container mx-auto my-auto flex px-5 py-24 items-center justify-center flex-col">
+                <!-- <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded " alt="hero" src="static/img/logo2.jpg">  -->
+                <div class="text-center lg:w-2/3">
+                    <h1 class="title-font sm:text-4xl text-3xl mb-4 font-bold">Sneaker Information Hub</h1> 
+                    <p class="mb-8 leading-relaxed font-semibold">Step into the future of footwear with Sneaker Information Hub, your ultimate destination for all things sneaker-related. From trend-setting styles to insider tips, we're the go-to source for enthusiasts, collectors, and everyone in between. Dive into a world where every step tells a story, and discover the latest releases, historical insights, and everything you need to know to elevate your sneaker game.</p> 
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    
+
+
+    <section class="text-gray-400 bg-gray-900 body-font bg2">
+        <nav class="navbar transparent navbar-fixed-top navbar-expand-lg navbar-dark static-top">
+            <div class="container px-5 py-2 mx-auto">
+                <div" class="flex flex-wrap w-full flex-col items-center text-center">
+                <h1 id="Products" class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">Categories</h2>
+                <p class="lg:w-1000 w-full leading-relaxed text-gray-200">
+
+                    <button type="button" onclick="(window.location.href = '#Casual')" class="multi-featured-collection-nav-item multi-nav-item-js text-sm-20 text-xs-16 active">
+                        Casual Shoes
+                    </button>
+                |
+                    <button type="button" onclick="(window.location.href = '#Running')" class="multi-featured-collection-nav-item multi-nav-item-js text-sm-20 text-xs-16">
+                        Running Shoes
+                    </button>
+                |
+                    <button type="button" onclick="(window.location.href = '#BasketBall')" class="multi-featured-collection-nav-item multi-nav-item-js text-sm-20 text-xs-16">
+                        BasketBall Shoes
+                    </button>
+                |
+                    <button type="button" onclick="(window.location.href = '#Training')" class="multi-featured-collection-nav-item multi-nav-item-js text-sm-20 text-xs-16">
+                        Training Shoes
+                    </button>
+                </p>    
+                </div>
+            </div>
+        </nav>
+    
+
+        <div class="container px-5 py-10 mx-auto">
+            <div id="Casual" class="flex flex-wrap -m-4">
+
+                <div class="flex flex-wrap sm:flex-row flex-col px-10 py-6 mb-1">
+                    <button class="sm:w-2/5 text-gray-100 font-medium title-font text-2xl mb-2 sm:mb-0 bg-gray-400 border-0 focus:outline-none rounded">Casual Shoes</button>
+                    <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0 text-gray-200">Casual shoes are a wardrobe staple. Casual shoes can be worn on a daily basis and pair well with laidback jeans and tees or even formal wear.</p>
+                </div>
+
+                <div class=" relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-72 mx-5 my-4"> 
+                    <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-40"> 
+                        <img src="static\Sneakerimg\9.jpg" alt="card-image" class="object-cover w-full h-full" />
+						<div class="content">
+                            <p class="text-white -mb-24">Decent quality for the price</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                Converse
+                            </p>
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                $60.00
+                            </p>
+                        </div>
+                        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-sky-600">
+                            Chuck Taylor All Star
+                        </p>
+                        <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
+                            With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <!-- <button class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg shadow-gray-900/10 hover:shadow-gray-900/20 focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none block w-full bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100" type="button">
+                            Add to Cart
+                        </button> -->
+                        <form action="/add_to_cart" method="post">
+                            <input type="hidden" name="sneaker_id" value="9">    <!--change the Value according to the item-->
+                            <button type="submit" onclick="addItemToCart()" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to Cart</button>
+                        </form>
+
+                        <!-- <button onclick="alert("hello")" type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Add to Cart
+                        </button> -->
+                    </div>
+                </div>
+
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-72 mx-2 my-4"> 
+                    <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-40"> 
+                        <img src="static\Sneakerimg\10.jpg" alt="card-image" class="object-cover w-full h-full" />
+                        <div class="content">
+                            <p class="text-white -mb-24">Classic design, reliable</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                Vans
+                            </p>
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                $70.00
+                            </p>
+                        </div>
+                        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-sky-600">
+                            Old Skool
+                        </p>
+                        <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
+                            With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <form action="/add_to_cart" method="post">
+                            <input type="hidden" name="sneaker_id" value="10">    <!--change the Value according to the item-->
+                            <button type="submit" onclick="addItemToCart()" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-72 mx-5 my-4"> 
+                    <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-40"> 
+                        <img src="static\Sneakerimg\11.jpg" alt="card-image" class="object-cover w-full h-full" />
+                        <div class="content">
+                            <p class="text-white text-sm -mb-24">Timeless sneakers, always a favorite</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                Adidas
+                            </p>
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                $80.00
+                            </p>
+                        </div>
+                        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-sky-600">
+                            Stan Smith
+                        </p>
+                        <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
+                            With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <form action="/add_to_cart" method="post">
+                            <input type="hidden" name="sneaker_id" value="11">    <!--change the Value according to the item-->
+                            <button type="submit" onclick="addItemToCart()" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-72 mx-2 my-4"> 
+                    <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-40"> 
+                        <img src="static\Sneakerimg\12.jpg" alt="card-image" class="object-cover w-full h-full" />
+                        <div class="content">
+                            <p class="text-white -mb-24">Solid shoes for everyday wear</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                Nike
+                            </p>
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                $90.00
+                            </p>
+                        </div>
+                        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-sky-600">
+                            Air Force 1
+                        </p>
+                        <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
+                            With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <form action="/add_to_cart" method="post">
+                            <input type="hidden" name="sneaker_id" value="12">    <!--change the Value according to the item-->
+                            <button type="submit" onclick="addItemToCart()" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to Cart</button>
+                        </form>
+
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="Running" class="flex flex-wrap -m-4 my-5">
+
+                <div class="flex flex-wrap sm:flex-row flex-col px-10 py-6 mb-1">
+                    <button class="sm:w-2/5 text-gray-100 font-medium title-font text-2xl mb-2 sm:mb-0 bg-gray-400 border-0 focus:outline-none rounded">Running Shoes</button>
+                    <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0 text-gray-200">Running shoes tend to be lighter in weight but heavier in cushioning, especially for the heel and the toe. Since running is a more intense sport, runners tend to exert more energy. </p>
+                </div>
+
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-72 mx-5 my-4"> 
+                    <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-40"> 
+                        <img src="static\Sneakerimg\1.jpg" alt="card-image" style="transform: scale(1.6); padding-bottom: 25px;" class="object-cover h-full mx-auto" />
+                        <div class="content">
+                            <p class="text-white -mb-24">Great shoes, very comfortable</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                Nike
+                            </p>
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                $120.00
+                            </p>
+                        </div>
+                        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-sky-600">
+                            Air Zoom Pegasus 38
+                        </p>
+                        <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
+                            With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <!-- <button class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg shadow-gray-900/10 hover:shadow-gray-900/20 focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none block w-full bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100" type="button">
+                            Add to Cart
+                        </button> -->
+                        <form action="/add_to_cart" method="post">
+                            <input type="hidden" name="sneaker_id" value="1">    <!--change the Value according to the item-->
+                            <button type="submit" onclick="addItemToCart()" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to Cart</button>
+                        </form>
+
+                        <!-- <button onclick="alert("hello")" type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Add to Cart
+                        </button> -->
+                    </div>
+                </div>
+
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-72 mx-2 my-4"> 
+                    <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-40"> 
+                        <img src="static\Sneakerimg\2.jpg" alt="card-image" style="transform: scaleX(-1.1); " class="object-cover w-full h-full" />
+                        <div class="content">
+                            <p class="text-white -mb-24">Best running shoes I ever had</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                Adidas
+                            </p>
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                $180.00
+                            </p>
+                        </div>
+                        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-sky-600">
+                            UltraBoost
+                        </p>
+                        <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
+                            With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <form action="/add_to_cart" method="post">
+                            <input type="hidden" name="sneaker_id" value="2">    <!--change the Value according to the item-->
+                            <button type="submit" onclick="addItemToCart()" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-72 mx-5 my-4"> 
+                    <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-40"> 
+                        <img src="static\Sneakerimg\3.jpg" alt="card-image" class="object-cover w-full h-full" />
+                        <div class="content">
+                            <p class="text-white -mb-24">Nice design and good support</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                Brooks
+                            </p>
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                $140.00
+                            </p>
+                        </div>
+                        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-sky-600">
+                            Ghost 16
+                        </p>
+                        <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
+                            With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <form action="/add_to_cart" method="post">
+                            <input type="hidden" name="sneaker_id" value="3">    <!--change the Value according to the item-->
+                            <button type="submit" onclick="addItemToCart()" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-72 mx-2 my-4"> 
+                    <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-40"> 
+                        <img src="static\Sneakerimg\4.jpg" alt="card-image" class="object-cover w-full h-full" />
+                        <div class="content">
+                            <p class="text-white -mb-24">Decent shoes but a bit narrow</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                Asics
+                            </p>
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                $160.00
+                            </p>
+                        </div>
+                        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-sky-600">
+                            Gel Nimbus
+                        </p>
+                        <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
+                            With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <form action="/add_to_cart" method="post">
+                            <input type="hidden" name="sneaker_id" value="4">    <!--change the Value according to the item-->
+                            <button type="submit" onclick="addItemToCart()" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to Cart</button>
+                        </form>
+
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="BasketBall" class="flex flex-wrap -m-4">
+
+                <div class="flex flex-wrap sm:flex-row flex-col px-10 py-6 mb-1">
+                    <button class="sm:w-2/5 text-gray-100 font-medium title-font text-2xl mb-2 sm:mb-0 bg-gray-400 border-0 focus:outline-none rounded">BasketBall Shoes</button>
+                    <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0 text-gray-200">Basketball shoes are specially-designed footwear crafted for providing comfort, support, and stability while playing basketball.</p>
+                </div>
+
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-72 mx-5 my-4"> 
+                    <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-40"> 
+                        <img src="static\Sneakerimg\5.jpg" alt="card-image" style="padding-bottom: 10%; transform: scale(2.2);" class="h-full mx-auto object-center" />
+                        <div class="content">
+                            <p class="text-white -mb-24">Excellent basketball shoes</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                Nike
+                            </p>
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                $200.00
+                            </p>
+                        </div>
+                        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-sky-600">
+                            LeBron 18
+                        </p>
+                        <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
+                            With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <!-- <button class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg shadow-gray-900/10 hover:shadow-gray-900/20 focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none block w-full bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100" type="button">
+                            Add to Cart
+                        </button> -->
+                        <form action="/add_to_cart" method="post">
+                            <input type="hidden" name="sneaker_id" value="5">    <!--change the Value according to the item-->
+                            <button type="submit" onclick="addItemToCart()" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-72 mx-2 my-4"> 
+                    <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-40"> 
+                        <img src="static\Sneakerimg\6.jpg" alt="card-image" class="object-cover w-full h-full" />
+                        <div class="content">
+                            <p class="text-white -mb-24">Comfortable for long hours of play</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                Adidas
+                            </p>
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                $160.00
+                            </p>
+                        </div>
+                        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-sky-600">
+                            Harden Vol. 5
+                        </p>
+                        <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
+                            With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <form action="/add_to_cart" method="post">
+                            <input type="hidden" name="sneaker_id" value="6">    <!--change the Value according to the item-->
+                            <button type="submit" onclick="addItemToCart()" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-72 mx-5 my-4"> 
+                    <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-40"> 
+                        <img src="static\Sneakerimg\8.jpg" alt="card-image" style="transform: scale(0.8);" class=" my-5 h-full" />
+                        <div class="content">
+                            <p class="text-white -mb-24">Good traction on the court</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                Under Armour
+                            </p>
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                $140.00
+                            </p>
+                        </div>
+                        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-sky-600">
+                            Curry 8
+                        </p>
+                        <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
+                            With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <form action="/add_to_cart" method="post">
+                            <input type="hidden" name="sneaker_id" value="7">    <!--change the Value according to the item-->
+                            <button type="submit" onclick="addItemToCart()" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-72 mx-2 my-4"> 
+                    <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-40"> 
+                        <img src="static\Sneakerimg\7.jpg" alt="card-image" style="transform: scaleX(-1);" class="object-cover w-full h-full" />
+                        <div class="content">
+                            <p class="text-white -mb-24">Love the style and performance</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                Nike
+                            </p>
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                $190.00
+                            </p>
+                        </div>
+                        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-sky-600">
+                            Air Jordan XXXVII
+                        </p>
+                        <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
+                            With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <form action="/add_to_cart" method="post">
+                            <input type="hidden" name="sneaker_id" value="8">    <!--change the Value according to the item-->
+                            <button type="submit" onclick="addItemToCart()" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to Cart</button>
+                        </form>
+
+                    </div>
+                </div>
+
+
+
+                
+                
+            </div>
+
+
+            <div id="Training" class="flex flex-wrap -m-4">
+
+                <div class="flex flex-wrap sm:flex-row flex-col px-10 py-10">
+                    <button class="sm:w-2/5 text-gray-100 font-medium title-font text-2xl mb-2 sm:mb-0 bg-gray-400 border-0 focus:outline-none rounded">Training Shoes</button>
+                    <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0 text-gray-200">Training shoes are a category of footwear designed to provide protection for a variety of fitness activities. They are kind-of a hybrid of a running shoe and a court shoe.</p>
+                </div>
+
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-72 mx-5 my-2"> 
+                    <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-40"> 
+                        <img src="static\Sneakerimg\13.jpg" alt="card-image" style="transform: scale(1.1);" class="object-cover w-full h-full" />
+                        <div class="content">
+                            <p class="text-white text-sm -mb-24">Average performance, nothing special</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                Reebok
+                            </p>
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                $130.00
+                            </p>
+                        </div>
+                        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-sky-600">
+                            Nano X
+                        </p>
+                        <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
+                            With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <!-- <button class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg shadow-gray-900/10 hover:shadow-gray-900/20 focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none block w-full bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100" type="button">
+                            Add to Cart
+                        </button> -->
+                        <form action="/add_to_cart" method="post">
+                            <input type="hidden" name="sneaker_id" value="13">    <!--change the Value according to the item-->
+                            <button type="submit" onclick="addItemToCart()" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to Cart</button>
+                        </form>
+
+                        <!-- <button onclick="alert("hello")" type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Add to Cart
+                        </button> -->
+                    </div>
+                </div>
+
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-72 mx-2 my-2"> 
+                    <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-40"> 
+                        <img src="static\Sneakerimg\15.jpg" alt="card-image" style="transform: scaleX(-1);" class="object-cover w-full h-full" />
+                        <div class="content">
+                            <p class="text-white -mb-24">Great for cross-training workouts</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                Nike
+                            </p>
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                $150.00
+                            </p>
+                        </div>
+                        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-sky-600">
+                            Metcon
+                        </p>
+                        <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
+                            With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <form action="/add_to_cart" method="post">
+                            <input type="hidden" name="sneaker_id" value="14">    <!--change the Value according to the item-->
+                            <button type="submit" onclick="addItemToCart()" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-72 mx-5 my-2"> 
+                    <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-40"> 
+                        <img src="static\Sneakerimg\14.jpg" alt="card-image" class="object-cover my-5 w-full h-full" />
+                        <div class="content">
+                            <p class="text-white -mb-24">Lightweight and comfortable</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                New Balance
+                            </p>
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                $120.00
+                            </p>
+                        </div>
+                        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-sky-600">
+                            Minimus
+                        </p>
+                        <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
+                            With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <form action="/add_to_cart" method="post">
+                            <input type="hidden" name="sneaker_id" value="15">    <!--change the Value according to the item-->
+                            <button type="submit" onclick="addItemToCart()" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-72 mx-2 my-2"> 
+                    <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-40"> 
+                        <img src="static\Sneakerimg\16.jpg" alt="card-image" class="my-3 object-cover w-full h-full" />
+                        <div class="content">
+                            <p class="text-white -mb-24">Good grip and stability</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                Adidas
+                            </p>
+                            <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                $140.00
+                            </p>
+                        </div>
+                        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-sky-600">
+                            Crazy Train
+                        </p>
+                        <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
+                            With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <form action="/add_to_cart" method="post">
+                            <input type="hidden" name="sneaker_id" value="16">    <!--change the Value according to the item-->
+                            <button type="submit" onclick="addItemToCart()" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to Cart</button>
+                        </form>
+
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="text-gray-600 body-font bg-gray-100">
+        <div class="container px-2 py-1 mx-auto flex items-center sm:flex-row flex-col">
+            <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                <img src="static/img/final_logo-removebg-preview.png" alt="Logo" class="object-cover w-20">
+                <span class="ml-3 text-xl">Sneaker Information Hub</span>
+            </a>
+            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2024 Sneaky
+            </p>
+            <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+                <a class="text-gray-500">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        class="w-5 h-5" viewBox="0 0 24 24">
+                        <path
+                            d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        class="w-5 h-5" viewBox="0 0 24 24">
+                        <path
+                            d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                        </path>
+                    </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                    </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path stroke="none"
+                            d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                        </path>
+                        <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                    </svg>
+                </a>
+            </span>
+        </div>
+    </footer>
+    
+</body>
+
+
+
+</html>

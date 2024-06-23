@@ -1,0 +1,63 @@
+<head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+    <style>
+    .bg{
+    background-image: url('https://n.nordstrommedia.com/id/c707acd9-434b-44a7-a2ab-1a1508fd86e6.jpeg?h=600&w=1609');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 80%;
+    
+  }
+  .button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+</head>
+<div class="content bg bg-fixed">
+<h1 class="headings">Add Sneaker</h1>
+<br>
+<br>
+<div class="temp1" >
+<form method="POST" action="">
+    <label >Model ID</label>
+    <br>
+    <input type="text" placeholder="Enter an integer value " name="modelid" required="required" />
+    <br>
+    <label >Brand</label>
+    <br>
+    <input type="text" placeholder="Enter the Brand Name" name="brand" required="required" />
+    <br>
+    <label >Style</label>
+    <br>
+    <input type="text" placeholder="Enter a String " name="style" required="required" />
+    <br>
+    <label >Colour</label>
+    <br>
+    <input type="text" placeholder="Enter a Word" name="color" required="required"/>
+    <br>
+    <label >Size</label>
+    <br>
+    <input type="text" placeholder="Enter a Word" name="size" required="required"/>
+    <br>
+    <label >Price</label>
+    <br>
+    <input type="text" placeholder="Enter an integer value" name="price" required="required"/>
+    <br>
+    <label >Release Date</label>
+    <br>
+    <input type="text" placeholder="Enter a Date(DD/MM/YYYY)" name="releasedate" required="required"/>
+    <br>
+    <input type="submit">
+    
+       
+</form>
+</div>
+</div>
