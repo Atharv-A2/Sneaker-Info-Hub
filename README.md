@@ -1,56 +1,69 @@
-# Tour-With-Us
+# Sneaker-Information-Hub
 <ul>
-<li>Developed web application for tourist data management that comprised two modes. Admin mode had elevated access to view, add, and modify booking information. User mode to book travel plans on the website
-<li>Created responsive web application  using HTML and  CSS for front-end and engineered backend using Flask integrated with SQL Server
+<li>The Sneaker Information Hub serves as a comprehensive resource for users to access information on diverse sneaker types and descriptions. Additionally, it doubles as an e-commerce platform, enabling users to make purchases directly through the platform while offering owners tools for inventory management.
+    
+<li>Created responsive web application  using HTML and  CSS & TailWind CSS for front-end and engineered backend using Flask integrated with SQL Server
 
 </ul>
 
-# Usage directions:
-Configure the parameters according to your local system and database in the db.yaml file
+# Features
+<ul>
+<li>User authentication (sign up, log in, log out)</li>
+<li>Product browsing and searching</li>
+<li>Actual Reviews from Customers</li>
+<li>Shopping cart and checkout process</li>
+<li>Order history for users</li>
+<li>Admin panel for managing products and orders</li>
+<li>Responsive design using Tailwind CSS</li>
+<li>Directory Management by Admins</li>
+<li>Invoice Generation for the Purchase</li>
+</ul>
 
-Webpages for different functions:
+
+# Installation:
+
+## Prerequisites:
+<ul>
+  <li>Python</li>
+  <li>MySQL</li>
+  <li>XAMPP</li>
+</ul>
+
+## Steps:
+
+1. Clone the Repository
+
+2. ### Set up the Backend
+   <ol>
+    <li>Creating a Virtual Environment:
+        
+        python -m venv venv
+        source venv\Scripts\activate
+    </li>
+    <li>Install the required Python Packages:
+     
+        pip install -r requirements1.txt
+    </li>
+</ol>
 
 
-1. Homepage: 
-```
-http://localhost:5000/home
-```
-2. View and Remove packages: 
-```
-http://localhost:5000/all_packages
-```
+3. ### Set up MySQL Database
+    <ul>
+        <li>Start XAMPP and activate Apache and MySQL.</li>
+        <li>Create a new database named sneaker_db.</li>
+    </ul>
 
-3. Add package: 
-```
-http://localhost:5000/add_pack
-```
 
-4. View all users: 
-```
-http://localhost:5000/all_users
-```
+4. Configure the parameters according to your local system and database in the db.yaml file
 
-5. View all bookings: 
-```
-http://localhost:5000/all_bookings
-```
 
-6. View all enquiries: 
-```
-http://localhost:5000/all_enquiries
-```
 
-7. View and renove employees: 
-```
-http://localhost:5000/all_employees
-```
 
-8. Add employee: 
-```
-http://localhost:5000/add_employee
-```
 
-9. Update package cost: 
-```
-http://localhost:5000/update_pack
-```
+# License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+# Contact
+For any questions or suggestions, feel free to open an issue or contact me at atharv1901@gmail.com.
+
+Thank you for using the Sneaker Information Hub (Sneaky)! We hope you find it useful and enjoyable.
