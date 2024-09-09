@@ -33,7 +33,7 @@
 
 ## Steps:
 
-1. Clone the Repository
+1. ### Clone the Repository
 
 2. ### Set up the Backend
    <ol>
@@ -58,7 +58,10 @@
 
 4. Configure the parameters according to your local system and database in the db.yaml file
 
-
+5. Check if the Server is Live on the XAMPP Application then run the App.py file using
+   python app.py
+   
+6. Click or Type the Link present in the Terminal. Now your Project is Live on your LOCALHOST.
 
 
 
