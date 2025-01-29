@@ -4,7 +4,7 @@
     
 <li>Created responsive web application  using HTML and  CSS & TailWind CSS for front-end and engineered backend using Flask integrated with SQL Server
 
-<li>Here is the Full Walkthrough of the Project and its Functionalities. https://shorturl.at/WPbD5</li>
+<li>Here is the Full Walkthrough of the Project and its Functionalities. <a href="https://drive.google.com/file/d/1J0MuyT6MvZ5Nzp1jVgqIAn-aMqqy8xbW/view?usp=drivesdk">Video Walkthrough</a></li>
 
 </ul>
 
